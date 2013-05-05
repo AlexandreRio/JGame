@@ -239,10 +239,10 @@ public class TextureLoader {
         // for a texture
         if (bufferedImage.getColorModel().hasAlpha()) {
             raster = Raster.createInterleavedRaster(DataBuffer.TYPE_BYTE,texWidth,texHeight,4,null);
-            texImage = new BufferedImage(glAlphaColorModel,raster,false,new Hashtable());
+            texImage = new BufferedImage(glAlphaColorModel,raster,false,new Hashtable<String, Object>());
         } else {
             raster = Raster.createInterleavedRaster(DataBuffer.TYPE_BYTE,texWidth,texHeight,3,null);
-            texImage = new BufferedImage(glColorModel,raster,false,new Hashtable());
+            texImage = new BufferedImage(glColorModel,raster,false,new Hashtable<String, Object>());
         }
 
         // copy the source image into the produced image

@@ -3,21 +3,22 @@ package control;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
 
-import view.Window;
-
 /**
  * Handles the reactions due to input actions
- * @author orbital
+ * @author Alexandre Rio
  * @version 1.0
  */
 public class PollInputWindow {
 
-   public static void pollInput(Window win) {
+/**
+ * poll input
+ */
+public static void pollInput() {
 
 
       if (Mouse.isButtonDown(0)) {
-    	  win.w = Mouse.getX() - win.w2/2;
-    	  win.l = Mouse.getY() - win.l2/2;
+    	  //win.w = Mouse.getX() - win.w2/2;
+    	  //win.l = Mouse.getY() - win.l2/2;
       }
 
       if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
@@ -25,7 +26,7 @@ public class PollInputWindow {
       }
 
       while (Keyboard.next()) {
-    	  if (Keyboard.getEventKeyState()) {
+    	  if (Keyboard.getEventKeyState()) {	
     		  if (Keyboard.getEventKey() == Keyboard.KEY_A) {
     			  System.out.println("A Key Pressed");
     		  }
@@ -49,4 +50,3 @@ public class PollInputWindow {
       }
    }
 }
-
